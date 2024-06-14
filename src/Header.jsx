@@ -41,14 +41,12 @@ export function Header() {
 
   else {
     return (
-    <div className="header">
-      <h1>Kickstarter</h1>
-      <button onClick={() => {window.location.href = "/signin"}}>Sign In</button>
-      <button onClick={() => {window.location.href = "/signup"}}>Sign Up</button>
-      <button onClick={() => {window.location.href = "/"}}>Home</button>
-    </div>
-    )
+      <div className="header">
+        <h1>Kickstarter</h1>
+        <button onClick={() => {window.location.href = "/signin"}}>Sign In</button>
+        <button onClick={() => {window.location.href = "/signup"}}>Sign Up</button>
+        <button onClick={() => {window.location.href = "/"}}>Home</button>
+      </div>
+    );
   }
-
-
 }
