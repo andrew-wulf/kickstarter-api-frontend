@@ -1,10 +1,10 @@
 import axios from "axios";
 
-export function ProjectDelete () {
+export function ProjectDelete (props) {
 
   const handleDeleteProject = () => {
     console.log("submitting delete");
-    axios.delete("http://localhost:3000/projects/2.json").then((response) => {
+    axios.delete(`http://localhost:3000/projects/${props.project.id}.json`).then((response) => {
       console.log("Deleted Project Confirm", response.data);
     });
     window.location.href = "/";
