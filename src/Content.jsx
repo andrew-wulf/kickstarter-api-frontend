@@ -1,6 +1,9 @@
 import { useState, useEffect } from 'react'
 import axios from 'axios'
 import { ProjectsIndex } from './ProjectsIndex'
+import { Routes, Route } from "react-router-dom";
+import { SignIn } from './SignIn';
+
 
 export function Content() {
 
@@ -25,7 +28,15 @@ export function Content() {
 
   return (
     <div className="content">
-      <ProjectsIndex data={projects}/>
+      <button>Sign In</button>
+      <button>Sign Up</button>
+      <Routes>
+        <Route path="/signin" element={<SignIn />} />
+      </Routes>
+
+      <Routes>
+        <Route path="" element={<ProjectsIndex data={projects}/>} />
+      </Routes>
     </div>
 
   )
