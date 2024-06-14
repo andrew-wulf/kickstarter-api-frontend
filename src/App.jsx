@@ -1,24 +1,24 @@
-import './App.css'
-import { Header } from './Header'
-import { Content } from './Content'
-import { Footer } from './Footer'
+import './App.css';
+import { Header } from './Header';
+import { Content } from './Content';
+import { Footer } from './Footer';
 import { BrowserRouter } from "react-router-dom";
 
 function App() {
 
   return (
     <>
-    <BrowserRouter>
-      <Header />
-      <br/>
-      <br/>
-      <Content />
-      <br/>
-      <br/>
-      <Footer />
-    </BrowserRouter>
+      <BrowserRouter>
+        <Header />
+        <br/>
+        <br/>
+        <Content />
+        <br/>
+        <br/>
+        <Footer />
+      </BrowserRouter>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
