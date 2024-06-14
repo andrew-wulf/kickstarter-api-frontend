@@ -4,7 +4,7 @@ export function ProjectsIndex(props) {
   if (props.data.length > 0) {
     return (
       <div>
-        <h2>All Projects</h2>
+        <h1>All Projects</h1>
         <div className='projectsIndex'>
           {
             props.data.map(row => {
@@ -29,7 +29,7 @@ export function ProjectsIndex(props) {
 
   else {
     return (
-      <div>
+      <div id="placeholder">
         <h2>Nothing to see here...</h2>
       </div>
     )
