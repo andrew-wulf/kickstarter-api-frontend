@@ -18,20 +18,20 @@ export function Content() {
 
   const projectsIndex = () => {
     axios.get('http://localhost:3000/projects.json')
-    .then(response => {
-      console.log(response);
-      setProjects(response.data);
-    })
-    .catch(error => {
-      console.log(error);
-    })
-  }
+      .then(response => {
+        console.log(response);
+        setProjects(response.data);
+      })
+      .catch(error => {
+        console.log(error);
+      });
+  };
   
   const handleShowProject = (project) => {
     console.log("handleShowProject", project);
     setIsProjectsShowVisible(true);
     setCurrentProject(project);
-  }
+  };
 
   const handleClose = () => {
     console.log("handleClose");
