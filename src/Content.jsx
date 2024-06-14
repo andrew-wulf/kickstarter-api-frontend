@@ -3,6 +3,9 @@ import axios from 'axios';
 import { ProjectsIndex } from './ProjectsIndex';
 import { ProjectsShow } from './ProjectsShow';
 import { Modal } from './Modal';
+import { Routes, Route } from "react-router-dom";
+import { SignIn } from './SignIn';
+
 
 export function Content() {
 
@@ -40,10 +43,25 @@ export function Content() {
 
   return (
     <div className="content">
-      <ProjectsIndex data={projects} onShowProject={handleShowProject} />
-      <Modal show={isProjectsShowVisible} onClose={handleClose}>
-        <ProjectsShow project={currentProject} />
-      </Modal>
+      <button>Sign In</button>
+      <button>Sign Up</button>
+      
+
+      <Routes>
+        <Route path="/signin" element={<SignIn />} />
+      </Routes>
+
+      <Routes>
+        <Route path="" element={
+        <div className="home">
+          <ProjectsIndex data={projects} onShowProject={handleShowProject} />
+          <Modal show={isProjectsShowVisible} onClose={handleClose}>
+            <ProjectsShow project={currentProject} />
+          </Modal>
+        </div>
+        } />
+
+      </Routes>
     </div>
   );
 }
