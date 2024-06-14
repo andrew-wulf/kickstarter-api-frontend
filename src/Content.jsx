@@ -14,6 +14,7 @@ export function Content() {
   const [isProjectsShowVisible, setIsProjectsShowVisible] = useState(false);
   const [currentProject, setCurrentProject] = useState({});
 
+
   const projectsIndex = () => {
     axios.get('http://localhost:3000/projects.json')
     .then(response => {
@@ -38,17 +39,24 @@ export function Content() {
   
   useEffect(projectsIndex, []);
 
-
+  const login = (params) => {
+    axios.post('http://localhost:3000/sessions.json', params)
+    .then(response => {
+      console.log(response);
+      axios.defaults.headers.common["Authorization"] = "Bearer " + response.data.jwt;
+      localStorage.setItem("jwt", response.data.jwt);
+      window.location.href = "/";
+    })
+    .catch(error => {
+      console.log(error);
+    })
+  }
 
 
   return (
     <div className="content">
-      <button>Sign In</button>
-      <button>Sign Up</button>
-      
-
       <Routes>
-        <Route path="/signin" element={<SignIn />} />
+        <Route path="/signin" element={<SignIn login={login}/>} />
       </Routes>
 
       <Routes>

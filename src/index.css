@@ -40,6 +40,17 @@
     line-height: 1.2em;
   }
 
+  img:hover {
+    filter: brightness(90%);
+    opacity: 90%;
+    cursor: pointer;
+  }
+
+  h2:hover {
+    color:rgb(80, 152, 233);
+    cursor: pointer;
+  }
+
   h3, img {
     font-weight: 400;
     line-height: 2.6em;
