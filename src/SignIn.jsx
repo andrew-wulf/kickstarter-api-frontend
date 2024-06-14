@@ -5,7 +5,7 @@ export function SignIn(props) {
     e.preventDefault();
     const params = new FormData(e.target);
     props.login(params);
-  }
+  };
 
   return (
     <div>
