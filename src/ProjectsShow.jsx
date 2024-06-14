@@ -23,6 +23,7 @@ export function ProjectsShow(props) {
     <div>
       <h1>Project information</h1>
       
+      <p>{project.id}</p>  //this is here solely for testing purposes
       <p>Title: {project.title}</p>
       <p>Description: {project.description}</p>
       <p>Goal amount: {formatCurrency(project.goal_amount)}</p>
@@ -31,12 +32,12 @@ export function ProjectsShow(props) {
       <br/>
       <br/>
       <div>
-        <ProjectUpdate />
+        <ProjectUpdate project={props.project} />
       </div>
       <br/>
       <br/>
       <div>
-        <ProjectDelete />
+        <ProjectDelete project={props.project} />
       </div>
     </div>
   );
