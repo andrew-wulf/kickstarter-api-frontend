@@ -1,3 +1,6 @@
+import { ProjectUpdate } from "./ProjectUpdate";
+import { ProjectDelete } from "./ProjectDelete";
+
 const formatDate = (isoString) => {
   const date = new Date(isoString);
   const year = date.getFullYear();
@@ -25,6 +28,16 @@ export function ProjectsShow(props) {
       <p>Goal amount: {formatCurrency(project.goal_amount)}</p>
       <p>Start date: {formatDate(project.start_date)}</p>
       <p>End date: {formatDate(project.end_date)}</p>
+      <br/>
+      <br/>
+      <div>
+        <ProjectUpdate />
+      </div>
+      <br/>
+      <br/>
+      <div>
+        <ProjectDelete />
+      </div>
     </div>
   );
 }

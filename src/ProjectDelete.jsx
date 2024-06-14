@@ -9,7 +9,7 @@ export function ProjectDelete () {
 
   return(
     <div>
-      Render within the ProjectShow Modal
+      <p>Render within the ProjectShow Modal</p>
       <button> Delete This Project</button>
     </div>
   );
