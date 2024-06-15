@@ -1,0 +1,41 @@
+
+
+.grid-container {
+  margin-bottom: 2vw;
+}
+
+.contributions, .rewards {
+  text-align: left;
+  padding: 2em;
+}
+
+h2 {
+  font-size: 30px;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.projects {
+  text-align: left;
+  padding: 2em;
+}
+.user-header {
+  font-size: 14px;
+  width: 100vw;
+  display: flex;
+  flex-direction: row;
+  padding: 10px 0;
+  margin-bottom: 4vw;
+
+  img {
+    margin-left: 25vw;
+    margin-right: 5vw;
+    max-width: 10vw;
+  }
+
+}
+
+img {max-width: 15vw;}

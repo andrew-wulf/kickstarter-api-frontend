@@ -2,25 +2,7 @@ import { Routes, Route } from "react-router-dom";
 import {useState, useEffect} from 'react';
 import axios from 'axios';
 
-export function Header() {
-
-  const [currentUser, setCurrentUser] = useState("");
-
-  const getUser = () => {
-    if (localStorage.jwt) {
-      axios.defaults.headers.common["Authorization"] = "Bearer " + localStorage.jwt
-      axios.get('http://localhost:3000/users/current.json')
-      .then(response => {
-        console.log(response);
-        setCurrentUser(response.data);
-      })
-      .catch(error => {
-        console.log(error);
-      })
-    }
-
-  }
-  useEffect(getUser, [])
+export function Header(props) {
 
   const signOut = () => {
     delete axios.defaults.headers.common["Authorization"];
@@ -28,12 +10,12 @@ export function Header() {
     window.location.href = window.location.href;
   }
 
-  if (currentUser) {
+  if (props.user) {
     return (
       <div className="header">
         <h1 onClick={() => {window.location.href = "/"}}>Kickstarter</h1>
         <input id="searchBar" type="search" placeholder="Search projects, creators and categories"/>
-        <h2>Welcome, {currentUser.first}!</h2>
+        <h2 onClick={() => {window.location.href = "/user"}}>Welcome, {props.user.first}!</h2>
         <h3 onClick={signOut}>Sign Out</h3>
       </div>
     )
