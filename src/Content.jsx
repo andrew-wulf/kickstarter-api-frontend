@@ -7,6 +7,7 @@ import { Modal } from './Modal';
 import { Routes, Route } from "react-router-dom";
 import { SignIn } from './SignIn';
 import {SignUp} from './SignUp';
+import { ProjectCreate } from './ProjectCreate';
 
 
 export function Content() {
@@ -70,13 +71,14 @@ export function Content() {
     <div className="content">
       <Routes>
         <Route path="/signin" element={
-        <SignIn login={login}/>}/>
+          <SignIn login={login}/>}/>
         
         <Route path="/signup" element={<SignUp signup={signup}/>} />
    
         <Route path="" element={
           <div className="home">
             <ProjectsIndex data={projects} onShowProject={handleShowProject} />
+            <ProjectCreate />
             <Modal show={isProjectsShowVisible} onClose={handleClose}>
               <ProjectsShow project={currentProject} />
             </Modal>

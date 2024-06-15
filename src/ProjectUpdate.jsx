@@ -2,7 +2,7 @@ import axios from "axios";
 
 export function ProjectUpdate () {
 
-  return(
+  return (
     <div>
       Render this within ProjectShow modal
       <form>
