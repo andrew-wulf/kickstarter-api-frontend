@@ -5,6 +5,7 @@ import { ProjectsShow } from './ProjectsShow';
 import { Modal } from './Modal';
 import { Routes, Route } from "react-router-dom";
 import { SignIn } from './SignIn';
+import {SignUp} from './SignUp';
 
 
 export function Content() {
@@ -52,14 +53,26 @@ export function Content() {
     })
   }
 
+  const signup = (params) => {
+    axios.post('http://localhost:3000/users.json', params)
+    .then(response => {
+      console.log(response);
+      login(params);
+    })
+    .catch(error => {
+      console.log(error);
+    })
+  }
+
 
   return (
     <div className="content">
       <Routes>
-        <Route path="/signin" element={<SignIn login={login}/>} />
-      </Routes>
-
-      <Routes>
+        <Route path="/signin" element={
+        <SignIn login={login}/>}/>
+        
+        <Route path="/signup" element={<SignUp signup={signup}/>} />
+   
         <Route path="" element={
           <div className="home">
             <ProjectsIndex data={projects} onShowProject={handleShowProject} />
@@ -67,7 +80,8 @@ export function Content() {
               <ProjectsShow project={currentProject} />
             </Modal>
           </div>
-        } />
+        }/>
+
 
       </Routes>
     </div>
