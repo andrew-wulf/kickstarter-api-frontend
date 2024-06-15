@@ -39,3 +39,46 @@ h2 {
 }
 
 img {max-width: 15vw;}
+
+
+.user-page {
+  margin-left: 2vw;
+}
+
+.user-donations-index {
+  margin-top: 10vh;
+  text-align: bottom;
+  h1 {
+    font-size: 30px;
+  }
+  h1, p{
+    text-align: left;
+  }
+
+  h2 {
+    font-size: 30px;
+    color: rgba(46, 152, 28, 0.871);
+  }
+
+  h3 {
+    font-size: 18px;
+    font-weight: 500;
+  }
+
+  h3:hover {
+    color:rgb(76, 122, 174);
+    cursor: pointer;
+  }
+
+  p {
+    font-weight: 400;
+    font-size: 18px;
+  }
+}
+
+.user-donations-index-row {
+  display: grid;
+  grid-template-columns: 15% 25% 25% 10%;
+  column-gap: 8%;
+  border-bottom: 2px solid rgba(31, 31, 31, 0.451);
+}

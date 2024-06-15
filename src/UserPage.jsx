@@ -1,6 +1,7 @@
 import './UserPage.css';
 import { useState, useEffect } from 'react';
 import axios from 'axios'
+import { UserDonations } from './UserDonations';
 
 export function UserPage(props) {
 
@@ -14,7 +15,7 @@ export function UserPage(props) {
     let user = props.user;
 
     return (
-      <div>
+      <div className='user-page'>
         <div className='user-header'>
           <img src="https://images.unsplash.com/photo-1582845512747-e42001c95638?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"></img>
           <h1>{user.first}'s Page</h1>
@@ -52,15 +53,7 @@ export function UserPage(props) {
   
   
         <div className='contributions'>
-          <h2>Recent Contributions</h2>
-  
-          <h3>Filomena Nienow's Project for the Accessibility of Design</h3>
-          <h3>$3,000</h3>
-          <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nostrum recusandae rerum nulla delectus voluptates, distinctio nihil magnam sint natus laudantium explicabo, quia quasi! Odio sapiente iste ipsam fugit provident ex!</p>
-  
-          <h3>Filomena Nienow's Project for the Accessibility of Design</h3>
-          <h3>$3,000</h3>
-          <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nostrum recusandae rerum nulla delectus voluptates, distinctio nihil magnam sint natus laudantium explicabo, quia quasi! Odio sapiente iste ipsam fugit provident ex!</p>
+          <UserDonations user={user}/>
         </div>
   
       </div>

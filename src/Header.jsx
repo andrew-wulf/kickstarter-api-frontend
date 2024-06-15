@@ -10,12 +10,20 @@ export function Header(props) {
     window.location.href = window.location.href;
   }
 
+  
+
   if (props.user) {
+    let msg = `Welcome, ${props.user.first}!`;
+
+    if (props.user.admin === true) {
+      msg = msg + ' (admin)'
+    }
+
     return (
       <div className="header">
         <h1 onClick={() => {window.location.href = "/"}}>Kickstarter</h1>
         <input id="searchBar" type="search" placeholder="Search projects, creators and categories"/>
-        <h2 onClick={() => {window.location.href = "/user"}}>Welcome, {props.user.first}!</h2>
+        <h2 onClick={() => {window.location.href = "/user"}}>{msg}</h2>
         <h3 onClick={signOut}>Sign Out</h3>
       </div>
     )

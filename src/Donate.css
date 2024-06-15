@@ -1,0 +1,112 @@
+
+.donation-page {
+  margin-left: 10vw;
+
+  h1 {
+    font-size: 30px;
+  }
+  #header {
+    margin-bottom: 10vh;
+  }
+  h3 {
+    font-size: 26px;
+    color: rgb(37, 37, 37);
+  }
+  p {
+    font-weight: 600;
+    font-size: 18px;
+    color: rgba(58, 58, 58, 0.671);
+  }
+
+  .grid-container {
+    display: grid;
+    grid-template-columns: 5% 22% 30%;
+    gap: 15%;
+  }
+
+  form {
+   
+    display: flex;
+    flex-direction: column;
+    text-align: right;
+    
+    img {
+      min-width: 30vw;
+      max-width: 40vw;
+      max-height: 34vh;
+      align-self: center;
+    }
+
+    h1 {
+      text-align: left;
+      text-wrap: nowrap;
+    }
+    label {
+      font-size: 20px;
+      margin-bottom: 1.2em;
+      text-align: left;
+    }
+    input {
+      padding: 2px;
+      font-size: 16px;
+      background-color: rgb(245, 245, 245);
+      color: rgb(12, 12, 12);
+    }
+    
+    button {
+      margin-top: 1em;
+      align-self: right;
+    }
+  }
+}
+
+.progress-bar-container {
+  width: 80%;
+  background-color: #e0e0e0;
+  border-radius: 25px;
+  overflow: hidden;
+  height: 25px;
+  margin: auto;
+}
+
+.progress-bar-fill {
+  height: 100%;
+  background-color: #38ab23;
+  transition: width 0.5s ease-in-out;
+  border-radius: 25px 0 0 25px;
+}
+
+.proj-donations-index {
+  margin-top: 10vh;
+  text-align: bottom;
+  h1, p{
+    text-align: left;
+  }
+
+  h2 {
+    font-size: 30px;
+    color: rgba(46, 152, 28, 0.871);
+  }
+
+  h3 {
+    font-size: 24px;
+    font-weight: 500;
+  }
+
+  p {
+    font-weight: 400;
+  }
+}
+
+.proj-donations-index-row {
+  display: grid;
+  grid-template-columns: 15% 25% 25% 10%;
+  column-gap: 8%;
+  border-bottom: 2px solid rgba(31, 31, 31, 0.451);
+}
+
+#errors {
+  color: rgba(255, 0, 0, 0.858);
+  font-weight: 400;
+  text-wrap: nowrap;
+}
