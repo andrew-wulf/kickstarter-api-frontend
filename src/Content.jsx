@@ -7,7 +7,7 @@ import { Modal } from './Modal';
 import { Routes, Route } from "react-router-dom";
 import { SignIn } from './SignIn';
 import {SignUp} from './SignUp';
-import { ProjectCreate } from './ProjectCreate';
+
 
 
 export function Content() {
@@ -78,7 +78,6 @@ export function Content() {
         <Route path="" element={
           <div className="home">
             <ProjectsIndex data={projects} onShowProject={handleShowProject} />
-            <ProjectCreate />
             <Modal show={isProjectsShowVisible} onClose={handleClose}>
               <ProjectsShow project={currentProject} />
             </Modal>
