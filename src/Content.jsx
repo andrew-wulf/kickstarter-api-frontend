@@ -7,15 +7,20 @@ import { Modal } from './Modal';
 import { Routes, Route } from "react-router-dom";
 import { SignIn } from './SignIn';
 import {SignUp} from './SignUp';
+import {Donate} from './Donate'
+import { UserPage } from './UserPage';
+import { ProjectsNew } from './ProjectsNew';
 
 
-export function Content() {
+export function Content(props) {
 
   
   const [projects, setProjects] = useState({});
   const [isProjectsShowVisible, setIsProjectsShowVisible] = useState(false);
   const [currentProject, setCurrentProject] = useState({});
+  const [currentProj, setCurrentProj] = useState({});
 
+  
 
   const projectsIndex = () => {
     axios.get('http://localhost:3000/projects.json')
@@ -65,9 +70,22 @@ export function Content() {
     })
   }
 
+  const handleDonate = (proj) => {
+    window.location.href = `donate/${proj.id}`;
+    }
+
+  const handleProjectCreate = (params) => {
+    let title = params.get('title');
+    let date = params.get('end_date');
+    let goal = params.get('goal_amount');
+    console.log('title: ', title, 'date: ', date, 'goal: ', goal)
+  }
+
+
 
   return (
     <div className="content">
+  
       <Routes>
         <Route path="/signin" element={
         <SignIn login={login}/>}/>
@@ -76,13 +94,16 @@ export function Content() {
    
         <Route path="" element={
           <div className="home">
-            <ProjectsIndex data={projects} onShowProject={handleShowProject} />
+            <ProjectsIndex data={projects} onShowProject={handleShowProject} donate={handleDonate} />
             <Modal show={isProjectsShowVisible} onClose={handleClose}>
               <ProjectsShow project={currentProject} />
             </Modal>
           </div>
         }/>
 
+        <Route path="/donate/:id" element={<Donate project={currentProj} setProject={setCurrentProj}/>} />
+        <Route path="/user" element={<UserPage user={props.user} getUser={props.getUser}/>} />
+        <Route path="/new-project" element={<ProjectsNew user={props.user} createProject={handleProjectCreate}/>} />
 
       </Routes>
     </div>
