@@ -29,5 +29,5 @@ export function ProjectUpdate () {
         <button>Submit Updates</button>
       </form>
     </div>
-  )
+  );
 }
