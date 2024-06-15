@@ -18,6 +18,7 @@ export function ProjectsIndex(props) {
                   <h2 onClick={() => props.onShowProject(row)}>
                     {row.title}
                   </h2>
+                  <p>{row.id}</p>  {/*this is here solely for testing purposes*/}
                 </div>
               );
             })
