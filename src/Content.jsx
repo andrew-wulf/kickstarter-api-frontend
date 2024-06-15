@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import axios from 'axios';
 import { ProjectsIndex } from './ProjectsIndex';
 import { ProjectsShow } from './ProjectsShow';
+import { ProjectUpdate } from './ProjectUpdate';
 import { Modal } from './Modal';
 import { Routes, Route } from "react-router-dom";
 import { SignIn } from './SignIn';
