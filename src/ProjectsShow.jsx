@@ -1,6 +1,7 @@
 
 import { ProjectUpdate } from "./ProjectUpdate";
 import { ProjectDelete } from "./ProjectDelete";
+import { RewardsShow } from "./RewardsShow";
 
 const formatDate = (isoString) => {
   const date = new Date(isoString);
@@ -31,6 +32,9 @@ export function ProjectsShow(props) {
       <p>Start date: {formatDate(project.start_date)}</p>
       <p>End date: {formatDate(project.end_date)}</p>
       <br/>
+      <div>
+        <RewardsShow project={props.project}/>
+      </div>  
       <br/>
       <div>
         <ProjectUpdate project={props.project} />

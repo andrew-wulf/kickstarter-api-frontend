@@ -2,7 +2,6 @@ import { useState, useEffect } from 'react';
 import axios from 'axios';
 import { ProjectsIndex } from './ProjectsIndex';
 import { ProjectsShow } from './ProjectsShow';
-import { ProjectUpdate } from './ProjectUpdate';
 import { Modal } from './Modal';
 import { Routes, Route } from "react-router-dom";
 import { SignIn } from './SignIn';
@@ -48,38 +47,38 @@ export function Content(props) {
 
   const login = (params) => {
     axios.post('http://localhost:3000/sessions.json', params)
-    .then(response => {
-      console.log(response);
-      axios.defaults.headers.common["Authorization"] = "Bearer " + response.data.jwt;
-      localStorage.setItem("jwt", response.data.jwt);
-      window.location.href = "/";
-    })
-    .catch(error => {
-      console.log(error);
-    })
-  }
+      .then(response => {
+        console.log(response);
+        axios.defaults.headers.common["Authorization"] = "Bearer " + response.data.jwt;
+        localStorage.setItem("jwt", response.data.jwt);
+        window.location.href = "/";
+      })
+      .catch(error => {
+        console.log(error);
+      });
+  };
 
   const signup = (params) => {
     axios.post('http://localhost:3000/users.json', params)
-    .then(response => {
-      console.log(response);
-      login(params);
-    })
-    .catch(error => {
-      console.log(error);
-    })
-  }
+      .then(response => {
+        console.log(response);
+        login(params);
+      })
+      .catch(error => {
+        console.log(error);
+      });
+  };
 
   const handleDonate = (proj) => {
     window.location.href = `donate/${proj.id}`;
-    }
+  };
 
   const handleProjectCreate = (params) => {
     let title = params.get('title');
     let date = params.get('end_date');
     let goal = params.get('goal_amount');
     console.log('title: ', title, 'date: ', date, 'goal: ', goal)
-  }
+  };
 
 
 
