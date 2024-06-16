@@ -101,7 +101,7 @@ export function Content(props) {
           </div>
         }/>
 
-        <Route path="/donate/:id" element={<Donate project={currentProj} setProject={setCurrentProj}/>} />
+        <Route path="/donate/:id" element={<Donate project={currentProj} setProject={setCurrentProj} user={props.user}/>} />
         <Route path="/user" element={<UserPage user={props.user} getUser={props.getUser}/>} />
         <Route path="/new-project" element={<ProjectsNew user={props.user} createProject={handleProjectCreate}/>} />
 

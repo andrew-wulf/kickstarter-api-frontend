@@ -1,27 +1,13 @@
+import './Donate.css'
 import { useEffect } from "react";
 import axios from 'axios'
-
+import { ProjectDonations } from "./ProjectDonations";
+import { formatDate, formatCurrency } from './Functions';
+import { useState } from 'react';
 
 export function Donate(props) {
-
-  const formatDate = (isoString) => {
-    const date = new Date(isoString);
-    const year = date.getFullYear();
-    const month = String(date.getMonth() + 1).padStart(2, '0');
-    const day = String(date.getDate()).padStart(2, '0');
-    return `${month}-${day}-${year}`;
-  };
+  const [errors, setErrors] = useState("")
   
-  const formatCurrency = (amount) => {
-    return new Intl.NumberFormat('en-US', {
-      style: 'currency',
-      currency: 'USD',
-      minimumFractionDigits: 0,
-  maximumFractionDigits: 0,
-    }).format(amount);
-
-  };
-
   const daysUntil = (date) => {
     let today = new Date(); // Get today's date
     today.setHours(0, 0, 0, 0); // Ensure the time part is set to midnight
@@ -51,15 +37,60 @@ export function Donate(props) {
   }
   useEffect(getProject, []);
 
+  const countBackers = (project) => {
+    let donations = project.donations;
+    let emails = [];
+    let count = 0;
+    donations.forEach(donation => {
+      let email = donation.user.email;
+      if (emails.includes(email) === false) {
+        emails.push(email);
+        count +=1;
+      }
+    })
+    return count
+  }
+
+
+  const handleDonate = (e) => {
+    e.preventDefault();
+    const params = new FormData(e.target);
+
+    let amount = params.get('amount');
+
+    if (amount <= 0) {
+      setErrors("Amount must be greater than 0.");
+    } 
+    else {
+      if (amount < 1000000) {
+        setErrors("");
+        params.append('project_id', props.project.id);
+    
+        axios.post('http://localhost:3000/donations.json', params)
+        .then(response => {
+          console.log(response);
+          window.location.href = window.location.href;
+        })
+        .catch(error => {
+          console.log(error);
+        })
+      }
+      else {
+        setErrors("Amount must be less than 1 million USD.");
+      }
+    }
+  }
+
+
   let project = props.project;
-  let amount_raised = project.goal_amount * 0.8;
-  let percentage = Math.min(100 * (amount_raised / project.goal_amount), 100);
-  let backers = 14;
-
-
+  
   if (project.id !== undefined) {
+    let amount_raised = project.amount_raised;
+    let percentage = Math.min(100 * (amount_raised / project.goal_amount), 100);
+    let backers = countBackers(project);
+
     return (
-      <div className="donation">
+      <div className="donation-page">
         <h1 id="header">{project.title}</h1>
         
 
@@ -68,11 +99,12 @@ export function Donate(props) {
 
           <div className="spacer"></div>
 
-          <form id="donateForm">
+          <form id="donateForm" onSubmit={handleDonate}>
             <img src="https://images.unsplash.com/photo-1582845512747-e42001c95638?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"></img>
             <h1>Support this Project</h1>
-            <label> Amount: <input name="first" type="text"/> </label>
-            <label> Message: <input name="last" type="text"/> </label>
+            <p id="errors">{errors}</p>
+            <label> Amount: <input name="amount" type="number"/> </label>
+            <label> Message: <input name="message" type="text"/> </label>
             <button type="submit">Donate</button>
           </form>
           
@@ -83,8 +115,8 @@ export function Donate(props) {
                 style={{ width: `${percentage}%` }}
               ></div>
             </div>
-            <h3>{formatCurrency(amount_raised)}</h3>
-            <p>pledged of {formatCurrency(project.goal_amount)} goal</p>
+            <h3>{formatCurrency(amount_raised, false)}</h3>
+            <p>pledged of {formatCurrency(project.goal_amount, false)} goal</p>
 
             <h3>{backers}</h3>
             <p>Backers</p>
@@ -94,6 +126,7 @@ export function Donate(props) {
           </div>
         </div>
 
+        <ProjectDonations project={project}/>
       </div>
     )
   }
