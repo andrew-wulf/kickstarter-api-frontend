@@ -1,18 +1,37 @@
-
+import "./ProjectsNew.css";
+import axios from "axios";
+import { useState, useRef } from "react";
 
 export function ProjectsNew(props) {
+  const [message, setMessage] = useState('');
+  const [messageType, setMessageType] = useState('');
+  const formRef = useRef(null);
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const params = new FormData(e.target);
-    props.createProject(params);
-  }
+    const formData = new FormData(e.target);
+    const params = Object.fromEntries(formData.entries());
+
+    axios.post('http://localhost:3000/projects.json', params).then(response => {
+      setMessage("Project created successfully!");
+      setMessageType("success");
+      console.log("Project created:", response.data);
+      formRef.current.reset();
+    })
+      .catch(error => {
+        setMessage("Error creating the project..");
+        setMessageType("error");
+        console.error("Error:", error);
+      }); 
+  };
 
   return (
     <div className="new-project">
       <h1>New Project</h1>
+
+      {message && <p className={`message ${messageType}`}>{message}</p>}
       
-      <form onSubmit={handleSubmit} id="signupForm">
+      <form onSubmit={handleSubmit} ref={formRef} id="signupForm">
 
         <label> Title: <input name="title" type="text"/> </label>
         <label> Description: <input name="description" type="text"/> </label>
@@ -24,5 +43,5 @@ export function ProjectsNew(props) {
       </form>
 
     </div>
-  )
+  );
 }
