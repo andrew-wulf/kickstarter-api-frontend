@@ -103,45 +103,73 @@ h1 {
 }
 
 .projectsIndex {
-
   padding: 2em 4em;
   display: grid;
   grid-template-columns: 40% 40%;
   column-gap: 15%;
-  text-align: left;
   
   h2 {
-    font-size: 24px;
-    line-height: 1.2em;
-  }
-  
-  img:hover {
-    filter: brightness(90%);
-    opacity: 90%;
-    cursor: pointer;
+    font-size: 22px;
+    font-weight: 600;
+    line-height: 1.4em;
   }
 
-  h2:hover {
-    color:rgb(80, 152, 233);
-    cursor: pointer;
-  }
-
-  h3, img {
-    font-weight: 400;
+  h3{
     line-height: 2.6em;
-    font-size: 18px;
-    padding: 0.6em;
+    margin-right: 1em;
+    font-size: 16px;
+      font-weight: 300;
   }
 }
 
 .projectsRow {
-  padding-bottom: 4em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+ 
 
+  .img-container {
+    width: 20vw; /* Set the desired width */
+    height: 24vh; /* Set the desired height */
+    border-radius: 15px; /* Adjust the radius to your preference */
+    overflow: hidden; /* Ensure the image respects the rounded corners */
+    box-shadow: 0 2px 4px rgba(138, 138, 138, 0.1); /* Optional: add a shadow for better effect */
+    display: flex; /* Flexbox to center the image */
+    align-items: center; /* Center the image vertically */
+    justify-content: center; /* Center the image horizontally */
+    
+  }
   img {
-    min-width: 250px;
-    max-width: 25vw;
+    width: 600px; /* Make the image fill the container */
+    height: auto; /* Maintain the aspect ratio */
+  }
+  
+  p {
+    opacity: 0%;
+  }
+  h2 {
+    text-decoration: none;
+  }
+  
+  .details {
+    display: flex;
   }
 }
+
+.projectsRow:hover {
+  border: 1px solid transparent; /* Almost non-existent border */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Shadow effect */
+  border-radius: 5%;
+  cursor: pointer;
+
+  p {
+    opacity: 100%;
+  }
+  h2 {
+    text-decoration: underline;
+  }
+}
+
 
 #placeholder {
   margin-top: 30vh;

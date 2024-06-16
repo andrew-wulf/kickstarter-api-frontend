@@ -7,6 +7,7 @@ export function formatDate(isoString) {
   return `${month}-${day}-${year}`;
 };
 
+
 export function formatCurrency(amount, decimal=true) {
 
   if (decimal) {
@@ -23,4 +24,18 @@ export function formatCurrency(amount, decimal=true) {
       maximumFractionDigits: 0,
     }).format(amount);
   }
+};
+
+
+export function daysUntil(date) {
+  let today = new Date(); // Get today's date
+  today.setHours(0, 0, 0, 0); // Ensure the time part is set to midnight
+  
+  let target = new Date(formatDate(date));
+  target.setHours(0, 0, 0, 0); // Ensure the time part is set to midnight
+
+  const timeDifference = target.getTime() - today.getTime(); // Difference in milliseconds
+  const dayDifference = Math.ceil(timeDifference / (1000 * 60 * 60 * 24)); // Convert milliseconds to days
+
+  return Math.max(dayDifference, 0);
 };

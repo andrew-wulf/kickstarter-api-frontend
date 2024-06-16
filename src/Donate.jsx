@@ -2,24 +2,13 @@ import './Donate.css'
 import { useEffect } from "react";
 import axios from 'axios'
 import { ProjectDonations } from "./ProjectDonations";
-import { formatDate, formatCurrency } from './Functions';
+import { formatDate, formatCurrency, daysUntil } from './Functions';
 import { useState } from 'react';
+
 
 export function Donate(props) {
   const [errors, setErrors] = useState("");
   
-  const daysUntil = (date) => {
-    let today = new Date(); // Get today's date
-    today.setHours(0, 0, 0, 0); // Ensure the time part is set to midnight
-    
-    let target = new Date(formatDate(date));
-    target.setHours(0, 0, 0, 0); // Ensure the time part is set to midnight
-  
-    const timeDifference = target.getTime() - today.getTime(); // Difference in milliseconds
-    const dayDifference = Math.ceil(timeDifference / (1000 * 60 * 60 * 24)); // Convert milliseconds to days
-
-    return Math.max(dayDifference, 0);
-  };
 
   const getProject = () => {
     let url = window.location.href;
@@ -85,7 +74,7 @@ export function Donate(props) {
   let project = props.project;
   
   if (project.id !== undefined) {
-    let amountRaised = project.amountRaised;
+    let amountRaised = project.amount_raised;
     let percentage = Math.min(100 * (amountRaised / project.goal_amount), 100);
     let backers = countBackers(project);
 
