@@ -28,6 +28,17 @@ h1 {
   font-size: 40px;
 }
 
+.img-container {
+  border-radius: 15px; /* Adjust the radius to your preference */
+  overflow: hidden; /* Ensure the image respects the rounded corners */
+  display: flex; /* Flexbox to center the image */
+  align-items: center; /* Center the image vertically */
+  justify-content: center; /* Center the image horizontally */
+}
+
+img {
+  height: auto; /* Maintain the aspect ratio */
+}
 
 .header {
   background-color: rgb(235, 227, 223);
@@ -53,6 +64,20 @@ h1 {
     color: black;
   }
 
+  .img-container {
+    min-width: 50px;
+    min-width: 50px;
+    max-height: 60px;
+    min-height: 60px;
+    border-radius: 50px;
+    margin-left: 3vw;
+    align-self: center;
+  }
+
+  img {
+    width: 60px;
+  }
+
   h1 {
     color: rgb(22, 22, 22);
     margin-left: 3vw;
@@ -63,24 +88,38 @@ h1 {
     color:#161616;
     font-size: 26px;
     margin-right: 3vw;
-    margin-left: 3vw;
     align-self: center;
     text-wrap: nowrap;
+    text-decoration: none;
+  }
+
+  .flexbox {
+    display: flex;
+  }
+
+  .flexbox:hover {
+    cursor: pointer;
+    img {
+      filter: brightness(70%)
+    }
+    h2 {
+      text-decoration: underline;
+    }
   }
 
   h1:hover {
     cursor: pointer;
   }
 
-  h3:hover, h2:hover {
-    color:white;
+  h3:hover {
     cursor: pointer;
+    text-decoration: underline;
   }
 
   h2 {
     font-size: 20px;
     color: #1e1e1e;
-    margin-left: 14vw;
+    margin-left: 1.4vw;
   }
   .signInLink {
     margin-left: 20vw;
@@ -120,6 +159,7 @@ h1 {
     font-size: 16px;
       font-weight: 300;
   }
+
 }
 
 .projectsRow {
@@ -128,22 +168,36 @@ h1 {
   align-items: center;
  
 
-  .img-container {
+  #img-container {
+    box-shadow: 0 2px 4px rgba(138, 138, 138, 0.1); /* Optional: add a shadow for better effect */
     width: 20vw; /* Set the desired width */
     height: 24vh; /* Set the desired height */
-    border-radius: 15px; /* Adjust the radius to your preference */
-    overflow: hidden; /* Ensure the image respects the rounded corners */
-    box-shadow: 0 2px 4px rgba(138, 138, 138, 0.1); /* Optional: add a shadow for better effect */
-    display: flex; /* Flexbox to center the image */
-    align-items: center; /* Center the image vertically */
-    justify-content: center; /* Center the image horizontally */
-    
   }
+
   img {
     width: 600px; /* Make the image fill the container */
     height: auto; /* Maintain the aspect ratio */
   }
   
+  .flexbox {
+    display: flex;
+    flex-direction: row;
+  }
+  #avi-container {
+    min-width: 42px;
+    min-width: 42px;
+    max-height: 45px;
+    min-height: 45px;
+    border-radius: 50px;
+    margin-right: 1em;
+    align-self: center;
+  }
+  
+  #avi {
+    width: 45px;
+  }
+
+
   p {
     opacity: 0%;
   }

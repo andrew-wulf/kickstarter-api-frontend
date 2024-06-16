@@ -11,7 +11,7 @@
 
 .modal-main {
   position: fixed;
-  background: white;
+  background: linear-gradient(rgba(240, 224, 200, 0.95), rgba(255, 255, 255, 0.88));
   width: 80%;
   height: auto;
   top: 50%;
@@ -27,4 +27,29 @@
   position: absolute;
   top: 0em;
   right: 0.2em;
+}
+
+input {
+  margin-left: 1em;
+}
+
+#description {
+  background-color: rgba(241, 241, 241, 0.95);
+    color: rgb(12, 12, 12);
+  width: 25vw;
+  height: 15vh;
+  overflow: auto;
+  resize: none;
+  box-sizing: border-box;
+  padding: 10px;
+  border-radius:  20px;
+}
+
+
+#danger {
+  background-color: rgba(161, 24, 0, 0.904)
+}
+
+#primary {
+  background-color: rgb(28, 109, 156);
 }

@@ -9,22 +9,18 @@ export function ProjectUpdate (props) {
     axios.patch(`http://localhost:3000/projects/${props.project.id}.json`, params).then((response) => {
       console.log(response.data);
     });
-    window.location.href = "/";
+    window.location.href = window.location.href;
   };
 
   return (
     <div>
-      Render this within ProjectShow modal
+      <h1>Project Details</h1>
       <form onSubmit={handleUpdateProject}>
         <label>
           Update Title:
           <input type="text" name="title" defaultValue={props.project.title} />
         </label>
         <br/>
-        <label> 
-          Update Descript
-          <input type="text" name="description" defaultValue={props.project.description} />
-        </label>
         <br/>
         <label>
           Goal Target Update:
@@ -36,7 +32,11 @@ export function ProjectUpdate (props) {
           <input type="date" name="end_date" max="2030-01-01" defaultValue={props.project.end_date} />
         </label>
         <br/>
-        <button type="submit" >Submit Updates</button>
+        <label> 
+          Update Description:
+          <textarea type="text" id="description" name="description" defaultValue={props.project.description} />
+        </label>
+        <button type="submit" id="primary">Submit Updates</button>
       </form>
     </div>
   );

@@ -4,6 +4,8 @@ import axios from 'axios'
 import { ProjectDonations } from "./ProjectDonations";
 import { formatDate, formatCurrency, daysUntil } from './Functions';
 import { useState } from 'react';
+import { ProjectsShow } from './ProjectsShow';
+import { RewardsShow } from './RewardsShow';
 
 
 export function Donate(props) {
@@ -70,6 +72,7 @@ export function Donate(props) {
     }
   };
 
+ 
 
   let project = props.project;
   
@@ -81,8 +84,11 @@ export function Donate(props) {
     return (
       <div className="donation-page">
         <h1 id="header">{project.title}</h1>
-        
 
+        <div className='flexbox'>
+          <p>{project.description}</p>
+          <ProjectsShow project={project} user={props.user}/>
+        </div>
 
         <div className="grid-container">
 
@@ -90,11 +96,13 @@ export function Donate(props) {
 
           <form id="donateForm" onSubmit={handleDonate}>
             <img src="https://images.unsplash.com/photo-1582845512747-e42001c95638?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"></img>
+            
+
             <h1>Support this Project</h1>
             <p id="errors">{errors}</p>
             <label> Amount: <input name="amount" type="number"/> </label>
             <label> Message: <input name="message" type="text"/> </label>
-            <button type="submit">Donate</button>
+            <button type="submit" id="primary">Pledge</button>
           </form>
           
           <div>
@@ -115,7 +123,13 @@ export function Donate(props) {
           </div>
         </div>
 
-        <ProjectDonations project={project}/>
+        
+        
+
+        <ProjectDonations project={project} />
+      
+        <RewardsShow project={project}/>
+       
       </div>
     )
   }

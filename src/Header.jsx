@@ -19,11 +19,22 @@ export function Header(props) {
       msg = msg + ' (admin)'
     }
 
+    let img_link = "https://static.vecteezy.com/system/resources/thumbnails/009/292/244/small/default-avatar-icon-of-social-media-user-vector.jpg";
+    if (props.user.image !== null) {
+      img_link = props.user.image;
+    }
+
     return (
       <div className="header">
         <h1 onClick={() => {window.location.href = "/"}}>Kickstarter</h1>
         <input id="searchBar" type="search" placeholder="Search projects, creators and categories"/>
-        <h2 onClick={() => {window.location.href = "/user"}}>{msg}</h2>
+
+        <div className="flexbox">
+          <div className="img-container"> <img src={img_link} /> </div>
+          
+          <h2 onClick={() => {window.location.href = "/user"}}>{msg}</h2>
+        </div>
+        
         <h3 onClick={signOut}>Sign Out</h3>
       </div>
     )
