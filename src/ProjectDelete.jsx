@@ -14,8 +14,7 @@ export function ProjectDelete (props) {
 
   return (
     <div>
-      <p>Render within the ProjectShow Modal</p>
-      <button onClick={handleDeleteProject}> Delete This Project</button>
+      <button onClick={handleDeleteProject} id="danger"> Cancel This Project</button>
     </div>
   );
 }

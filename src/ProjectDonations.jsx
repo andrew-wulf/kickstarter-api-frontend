@@ -17,7 +17,7 @@ export function ProjectDonations(props) {
         <div className="proj-donations-index">
         <h1>Recent Contributions</h1>
           {
-            donations.map(row => {
+            donations.toReversed().map(row => {
               return (
                 <div className="proj-donations-index-row" key={row.id}> 
                   <h2>{formatCurrency(row.amount)}</h2>

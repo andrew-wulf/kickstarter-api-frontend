@@ -1,7 +1,8 @@
 
 import { ProjectUpdate } from "./ProjectUpdate";
 import { ProjectDelete } from "./ProjectDelete";
-import { RewardsShow } from "./RewardsShow";
+import { Modal } from './Modal';
+import { useState } from "react";
 
 const formatDate = (isoString) => {
   const date = new Date(isoString);
@@ -18,32 +19,46 @@ const formatCurrency = (amount) => {
   }).format(amount);
 };
 
-export function ProjectsShow(props) {
-  const { project } = props;
 
-  return (
-    <div>
-      <h1>Project information</h1>
-      
-      <p>{project.id}</p>  //this is here solely for testing purposes
-      <p>Title: {project.title}</p>
-      <p>Description: {project.description}</p>
-      <p>Goal amount: {formatCurrency(project.goal_amount)}</p>
-      <p>Start date: {formatDate(project.start_date)}</p>
-      <p>End date: {formatDate(project.end_date)}</p>
-      <br/>
+
+export function ProjectsShow(props) {
+  const project = props.project;
+
+  const [isProjectsShowVisible, setIsProjectsShowVisible] = useState(false);
+
+  const handleShowProject = () => {
+    console.log("handleShowProject", project);
+    setIsProjectsShowVisible(true);
+  };
+
+  const handleClose = () => {
+    console.log("handleClose");
+    setIsProjectsShowVisible(false);
+  };
+  
+  
+  if (props.user && project.owner.id === props.user.id) {
+    
+    return (
       <div>
-        <RewardsShow project={props.project}/>
-      </div>  
-      <br/>
-      <div>
-        <ProjectUpdate project={props.project} />
+        <button onClick={handleShowProject}>Edit</button>
+        <Modal show={isProjectsShowVisible} onClose={handleClose}>
+          <div>
+            <ProjectUpdate project={props.project} />
+          </div>
+          <br/>
+          <br/>
+          <div>
+            <ProjectDelete project={props.project} />
+          </div>
+        </Modal>
       </div>
-      <br/>
-      <br/>
+    );
+  }
+  else {
+    return (
       <div>
-        <ProjectDelete project={props.project} />
       </div>
-    </div>
-  );
+    )
+  }
 }

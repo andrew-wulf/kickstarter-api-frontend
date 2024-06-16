@@ -1,8 +1,6 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 import { ProjectsIndex } from './ProjectsIndex';
-import { ProjectsShow } from './ProjectsShow';
-import { Modal } from './Modal';
 import { Routes, Route } from "react-router-dom";
 import { SignIn } from './SignIn';
 import {SignUp} from './SignUp';
@@ -15,7 +13,6 @@ export function Content(props) {
 
   
   const [projects, setProjects] = useState({});
-  const [isProjectsShowVisible, setIsProjectsShowVisible] = useState(false);
   const [currentProject, setCurrentProject] = useState({});
   const [currentProj, setCurrentProj] = useState({});
 
@@ -32,16 +29,7 @@ export function Content(props) {
       });
   };
   
-  const handleShowProject = (project) => {
-    console.log("handleShowProject", project);
-    setIsProjectsShowVisible(true);
-    setCurrentProject(project);
-  };
 
-  const handleClose = () => {
-    console.log("handleClose");
-    setIsProjectsShowVisible(false);
-  };
   
   useEffect(projectsIndex, []);
 
@@ -93,10 +81,7 @@ export function Content(props) {
    
         <Route path="" element={
           <div className="home">
-            <ProjectsIndex data={projects} onShowProject={handleShowProject} donate={handleDonate} />
-            <Modal show={isProjectsShowVisible} onClose={handleClose}>
-              <ProjectsShow project={currentProject} />
-            </Modal>
+            <ProjectsIndex data={projects} donate={handleDonate} />
           </div>
         }/>
 
