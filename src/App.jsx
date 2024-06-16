@@ -14,13 +14,13 @@ function App() {
     if (localStorage.jwt) {
       axios.defaults.headers.common["Authorization"] = "Bearer " + localStorage.jwt
       axios.get('http://localhost:3000/users/current.json')
-      .then(response => {
-        console.log(response);
-        setCurrentUser(response.data);
-      })
-      .catch(error => {
-        console.log(error);
-      })
+        .then(response => {
+          console.log(response);
+          setCurrentUser(response.data);
+        })
+        .catch(error => {
+          console.log(error);
+        });
     }
     else {
       let path = window.location.pathname; 
