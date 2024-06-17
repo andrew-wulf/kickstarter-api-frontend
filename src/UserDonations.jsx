@@ -22,7 +22,7 @@ export function UserDonations(props) {
                 <div className="user-donations-index-row" key={row.id}> 
                   <h2>{formatCurrency(row.amount)}</h2>
                   <p>{row.message}</p>
-                  <h3 onClick={() => {window.location.href=`/donate/${row.project.id}`}}>{row.project.title}</h3>
+                  <h3 onClick={() => {window.location.href=`/projects/${row.project.id}`}}>{row.project.title}</h3>
                   <p>{formatDate(row.created_at)}</p>
                 </div>
               )

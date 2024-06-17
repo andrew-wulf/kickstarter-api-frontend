@@ -29,7 +29,7 @@ export function RewardsShow (props) {
   let reward = currentReward;
 
   return (
-    <div>
+    <div className="rewards">
       <h1>Project_id from reward = {reward.project_id} </h1>
       <h1>REWARD for Teir 1 Donation</h1>
       <p>Description: {reward.description} </p>

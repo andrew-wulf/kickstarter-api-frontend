@@ -2,6 +2,7 @@ import './UserPage.css';
 import { useState, useEffect } from 'react';
 import axios from 'axios'
 import { UserDonations } from './UserDonations';
+import { UserProjects } from './UserProjects';
 
 export function UserPage(props) {
 
@@ -17,7 +18,11 @@ export function UserPage(props) {
     return (
       <div className='user-page'>
         <div className='user-header'>
-          <img src="https://images.unsplash.com/photo-1582845512747-e42001c95638?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"></img>
+
+          <div className='img-container' id="user-avi">
+            <img src={user.image}></img>
+          </div>
+
           <h1>{user.first}'s Page</h1>
         </div>
   
@@ -27,9 +32,7 @@ export function UserPage(props) {
             <h2>My Projects</h2>
             <button onClick={() => {window.location.href="/new-project"}}>Start a Project</button>
   
-  
-            <p>Example Project for the Institution of Examples</p>
-            <p>Example Project for the Institution of Examples</p>
+            <UserProjects user={user}/>
           </div>
         
           <div className='user'>

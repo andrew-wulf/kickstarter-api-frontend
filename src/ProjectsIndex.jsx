@@ -13,12 +13,21 @@ export function ProjectsIndex(props) {
               let percentage = Math.floor(Math.max(100 * (row.amount_raised / row.goal_amount), 0));
 
               return (
+   
                 <div className='projectsRow' key={row.id} onClick={() => {props.donate(row)}}>
                   
                   <div className="img-container" id="img-container">
                     <img src= "https://images.unsplash.com/photo-1582845512747-e42001c95638?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"></img>
+
+                    
                   </div>
 
+                    <div className="progress-bar-container">
+                      <div
+                        className="progress-bar-fill"
+                        style={{ width: `${percentage}%` }}
+                      ></div>
+                    </div>
                   <h2>{row.title}</h2>
 
                   <div className="flexbox">
