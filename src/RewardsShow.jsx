@@ -1,14 +1,7 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
+import { formatCurrency, formatDate } from "./Functions";
 
-
-const formatDate = (isoString) => {
-  const date = new Date(isoString);
-  const year = date.getFullYear();
-  const month = String(date.getMonth() + 1).padStart(2, '0');
-  const day = String(date.getDate()).padStart(2, '0');
-  return `${month}-${day}-${year}`;
-};
 
 export function RewardsShow (props) {
   const [currentRewards, setCurrentRewards] = useState([]);
@@ -29,16 +22,17 @@ export function RewardsShow (props) {
   if (currentRewards.length > 0) {
     return (
       <div className="rewards-by-project-id">
-        <h1>Your Issued Rewards</h1>
-        <div id="reward-Cards">
+        <div className="reward-cards">
           {currentRewards.map(reward => (
-            <div key={reward.id}>
-              <img src="https://www.rgj.com/gcdn/authoring/authoring-images/2023/12/18/PREN/71956106007-star-ocean-the-second-story-r-pub-02-p-17-01-en.jpg?crop=3839,2159,x0,y0&width=3200&height=1800&format=pjpg&auto=webp" />
-              <p>Description: {reward.description} </p>
-              <p>Reward amount: {reward.amount} </p>
-              <p>Delivery Date: {formatDate(reward.delivery_date)} </p>
+            <div key={reward.id} id="card">
+              <h3>{reward.description} - {formatCurrency(reward.amount, false)} </h3>
+              <div className="img-container"> 
+                <img src="https://www.rgj.com/gcdn/authoring/authoring-images/2023/12/18/PREN/71956106007-star-ocean-the-second-story-r-pub-02-p-17-01-en.jpg?crop=3839,2159,x0,y0&width=3200&height=1800&format=pjpg&auto=webp" />
+              </div>
+              <p>Estimated Delivery:</p>
+              <p>{formatDate(reward.delivery_date)} </p>
             </div>
-          ))};
+          ))}
         </div>
       </div>
     );

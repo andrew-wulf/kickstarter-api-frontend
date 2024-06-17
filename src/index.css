@@ -377,22 +377,4 @@ img {
     }
   }
 
-  /*Reward Index In Project Page*/
-  #reward-Cards {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    font-family: fantasy;
-  }
-
-  #reward-Cards p {
-    color: #131528;
-    font-weight: 700;
-    letter-spacing: 2px;
-    text-align: left;
-
-  }
-
-  #reward-Cards img {
-    display: flex;
-    justify-content: flex-start;
-  }
+  
