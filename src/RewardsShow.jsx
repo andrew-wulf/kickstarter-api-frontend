@@ -11,7 +11,7 @@ const formatDate = (isoString) => {
 };
 
 export function RewardsShow (props) {
-  const [currentReward, setCurrentReward] = useState({});
+  const [currentRewards, setCurrentRewards] = useState([]);
 
   useEffect(() => {
     console.log("handling reward show");
@@ -19,23 +19,23 @@ export function RewardsShow (props) {
     axios.get(`http://localhost:3000/rewards.json`).then((response) => {
       console.log(response.data, "project rewards");
       const rewards = response.data;
-      const projectReward = rewards.find(reward => reward.project_id === projectId);
-      setCurrentReward(projectReward);
+      const projectRewards = rewards.filter(reward => reward.project_id === projectId);
+      setCurrentRewards(projectRewards);
     }).catch((error) => {
       console.error("There was an error fetching the rewards.");
     });
   }, [props.project]);
 
-  let reward = currentReward;
 
   return (
-    <div>
-      <h1>Project_id from reward = {reward.project_id} </h1>
-      <h1>REWARD for Teir 1 Donation</h1>
-      <p>Description: {reward.description} </p>
-      <p>Reward amount: {reward.amount} </p>
-      <p>Delivery Date: {formatDate(reward.delivery_date)} </p>
-
+    <div className="rewardsByProject">
+      {currentRewards.map(reward => (
+        <div>
+          <p>Description: {reward.description} </p>
+          <p>Reward amount: {reward.amount} </p>
+          <p>Delivery Date: {formatDate(reward.delivery_date)} </p>
+        </div>
+      ))};
     </div>
-  )
+  );
 }
