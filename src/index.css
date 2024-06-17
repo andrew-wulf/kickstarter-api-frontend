@@ -22,6 +22,8 @@ body {
   min-height: 100vh;
 }
 
+
+
 h1 {
   font-size: 3.2em;
   line-height: 1.1;
@@ -127,9 +129,6 @@ img {
 
 }
 
-.content {
-}
-
 .footer {
   background-color: rgb(20, 20, 20);
   color: rgb(224, 219, 219);
@@ -137,15 +136,16 @@ img {
   width: 100vw;
 }
 
-.index-page {
-  margin-left: 15vw;
+.index-page h1 {
+  margin-right: 6vw;
 }
 
 .projectsIndex {
   padding: 2em 4em;
   display: grid;
-  grid-template-columns: 40% 40%;
-  column-gap: 15%;
+  grid-template-columns: 30% 30%;
+  margin-left: 10vw;
+  column-gap: 20%;
   
   h2 {
     font-size: 22px;
@@ -157,7 +157,7 @@ img {
     line-height: 2.6em;
     margin-right: 1em;
     font-size: 16px;
-      font-weight: 300;
+    font-weight: 300;
   }
 
 }
@@ -166,7 +166,35 @@ img {
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding: 0.8em;
+  max-width: 400px;
+  
  
+  h1, h2, h3, p {
+    margin: 0.3em;
+  }
+
+  h2 {
+    margin-top: 0.6em;
+    font-weight: 600;
+    font-size: 20px;
+  }
+
+  .progress-bar-container {
+    width: 20vw;
+    background-color: #e0e0e055;
+    border-radius: 25px;
+    overflow: hidden;
+    height: 8px;
+    margin: 0;
+  }
+  
+  .progress-bar-fill {
+    height: 100%;
+    background-color: #81f674c8;
+    transition: width 0.5s ease-in-out;
+    border-radius: 25px 0 0 25px;
+  }
 
   #img-container {
     box-shadow: 0 2px 4px rgba(138, 138, 138, 0.1); /* Optional: add a shadow for better effect */
@@ -175,26 +203,32 @@ img {
   }
 
   img {
-    width: 600px; /* Make the image fill the container */
+    max-width: 22vw; /* Make the image fill the container */
     height: auto; /* Maintain the aspect ratio */
   }
   
   .flexbox {
     display: flex;
     flex-direction: row;
+
+    h3 {
+      font-weight: 400;
+      font-size: 16px;
+    }
   }
+
   #avi-container {
-    min-width: 42px;
-    min-width: 42px;
-    max-height: 45px;
-    min-height: 45px;
+    min-width: 40px;
+    max-width: 40px;
+    max-height: 40px;
+    min-height: 40px;
     border-radius: 50px;
     margin-right: 1em;
     align-self: center;
   }
   
   #avi {
-    width: 45px;
+    width: 42px;
   }
 
 

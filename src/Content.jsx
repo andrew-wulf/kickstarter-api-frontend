@@ -58,7 +58,7 @@ export function Content(props) {
   };
 
   const handleDonate = (proj) => {
-    window.location.href = `donate/${proj.id}`;
+    window.location.href = `projects/${proj.id}`;
   };
 
   const handleProjectCreate = (params) => {
@@ -85,7 +85,7 @@ export function Content(props) {
           </div>
         }/>
 
-        <Route path="/donate/:id" element={<Donate project={currentProj} setProject={setCurrentProj} user={props.user}/>} />
+        <Route path="/projects/:id" element={<Donate project={currentProj} setProject={setCurrentProj} user={props.user}/>} />
         <Route path="/user" element={<UserPage user={props.user} getUser={props.getUser}/>} />
         <Route path="/new-project" element={<ProjectsNew user={props.user} createProject={handleProjectCreate}/>} />
 
