@@ -33,6 +33,7 @@ export function RewardsShow (props) {
         <div id="reward-Cards">
           {currentRewards.map(reward => (
             <div key={reward.id}>
+              <img src="https://www.rgj.com/gcdn/authoring/authoring-images/2023/12/18/PREN/71956106007-star-ocean-the-second-story-r-pub-02-p-17-01-en.jpg?crop=3839,2159,x0,y0&width=3200&height=1800&format=pjpg&auto=webp" />
               <p>Description: {reward.description} </p>
               <p>Reward amount: {reward.amount} </p>
               <p>Delivery Date: {formatDate(reward.delivery_date)} </p>
