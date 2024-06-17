@@ -140,7 +140,7 @@ img {
 
 }
 
-<<<<<<< HEAD .content {}
+ <<<<<<< HEAD .content {}
 
 =======>>>>>>>e588260cd1b1d2242b45ca145ccbef85ed673341 .footer {
   background-color: rgb(20, 20, 20);
@@ -156,10 +156,10 @@ img {
 .projectsIndex {
   padding: 2em 4em;
   display: grid;
-  <<<<<<< HEAD grid-template-columns: 40% 40%;
+  grid-template-columns: 40% 40%;
   column-gap: 15%;
 
-  =======grid-template-columns: 30% 30%;
+grid-template-columns: 30% 30%;
   margin-left: 10vw;
   column-gap: 20%;
 
@@ -183,7 +183,7 @@ img {
   flex-direction: column;
   align-items: center;
 
-  <<<<<<< HEAD #img-container {
+ #img-container {
     box-shadow: 0 2px 4px rgba(138, 138, 138, 0.1);
     /* Optional: add a shadow for better effect */
     width: 20vw;
@@ -197,14 +197,11 @@ img {
     /* Make the image fill the container */
     height: auto;
     /* Maintain the aspect ratio */
-    =======padding: 0.8em;
+    padding: 0.8em;
     max-width: 400px;
 
 
-    h1,
-    h2,
-    h3,
-    p {
+    h1, h2, h3, p {
       margin: 0.3em;
     }
 
