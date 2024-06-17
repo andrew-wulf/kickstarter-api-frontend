@@ -80,30 +80,30 @@ export function Donate(props) {
     let amountRaised = project.amount_raised;
     let percentage = Math.min(100 * (amountRaised / project.goal_amount), 100);
     let backers = countBackers(project);
+    
+    let img_link = "https://images.unsplash.com/photo-1582845512747-e42001c95638?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D";
+
 
     return (
       <div className="donation-page">
+        <ProjectsShow project={project} user={props.user}/>
+
         <h1 id="header">{project.title}</h1>
 
         <div className='flexbox'>
           <p>{project.description}</p>
-          <ProjectsShow project={project} user={props.user}/>
+          
         </div>
 
         <div className="grid-container">
 
           <div className="spacer"></div>
 
-          <form id="donateForm" onSubmit={handleDonate}>
-            <img src="https://images.unsplash.com/photo-1582845512747-e42001c95638?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"></img>
-            
+          <div className='img-container'>
+            <img src={img_link}></img>
+          </div>
 
-            <h1>Support this Project</h1>
-            <p id="errors">{errors}</p>
-            <label> Amount: <input name="amount" type="number"/> </label>
-            <label> Message: <input name="message" type="text"/> </label>
-            <button type="submit" id="primary">Pledge</button>
-          </form>
+          <div className='spacer'/>
           
           <div>
             <div className="progress-bar-container">
@@ -121,10 +121,31 @@ export function Donate(props) {
             <h3>{daysUntil(project.end_date)}</h3>
             <p>Days to go</p>
           </div>
+        
+          <div className='spacer'/>
+
+          <form id="donateForm" onSubmit={handleDonate}>
+            <h1>Support this Project</h1>
+            <p id="errors">{errors}</p>
+            <label> Amount: <input name="amount" type="number"/> </label>
+            <label> Message: <input name="message" type="text"/> </label>
+            <button type="submit" id="primary">Pledge</button>
+          </form>
+          
+          <div className='spacer'/>
+          
+          <div className='rewards'>
+            <h1>Rewards</h1>
+            <h3>Tier 1 - $20</h3>
+            <p>20 of 20 left</p>
+            <h3>Tier 2 - $40</h3>
+            <p>20 of 20 left</p>
+            <h3>Tier 3 - $60</h3>
+            <p>20 of 20 left</p>
+          </div>
+
         </div>
 
-        
-        
 
         <ProjectDonations project={project} />
       

@@ -22,6 +22,8 @@ body {
   min-height: 100vh;
 }
 
+
+
 h1 {
   font-size: 3.2em;
   line-height: 1.1;
@@ -138,26 +140,30 @@ img {
 
 }
 
-.content {}
+<<<<<<< HEAD .content {}
 
-.footer {
+=======>>>>>>>e588260cd1b1d2242b45ca145ccbef85ed673341 .footer {
   background-color: rgb(20, 20, 20);
   color: rgb(224, 219, 219);
   height: 10vh;
   width: 100vw;
 }
 
-.index-page {
-  margin-left: 15vw;
+.index-page h1 {
+  margin-right: 6vw;
 }
 
 .projectsIndex {
   padding: 2em 4em;
   display: grid;
-  grid-template-columns: 40% 40%;
+  <<<<<<< HEAD grid-template-columns: 40% 40%;
   column-gap: 15%;
 
-  h2 {
+  =======grid-template-columns: 30% 30%;
+  margin-left: 10vw;
+  column-gap: 20%;
+
+  >>>>>>>e588260cd1b1d2242b45ca145ccbef85ed673341 h2 {
     font-size: 22px;
     font-weight: 600;
     line-height: 1.4em;
@@ -177,8 +183,7 @@ img {
   flex-direction: column;
   align-items: center;
 
-
-  #img-container {
+  <<<<<<< HEAD #img-container {
     box-shadow: 0 2px 4px rgba(138, 138, 138, 0.1);
     /* Optional: add a shadow for better effect */
     width: 20vw;
@@ -192,168 +197,225 @@ img {
     /* Make the image fill the container */
     height: auto;
     /* Maintain the aspect ratio */
+    =======padding: 0.8em;
+    max-width: 400px;
+
+
+    h1,
+    h2,
+    h3,
+    p {
+      margin: 0.3em;
+    }
+
+    h2 {
+      margin-top: 0.6em;
+      font-weight: 600;
+      font-size: 20px;
+    }
+
+    .progress-bar-container {
+      width: 20vw;
+      background-color: #e0e0e055;
+      border-radius: 25px;
+      overflow: hidden;
+      height: 8px;
+      margin: 0;
+    }
+
+    .progress-bar-fill {
+      height: 100%;
+      background-color: #69ef5ac7;
+      transition: width 0.5s ease-in-out;
+      border-radius: 25px 0 0 25px;
+    }
+
+    #img-container {
+      box-shadow: 0 2px 4px rgba(138, 138, 138, 0.1);
+      /* Optional: add a shadow for better effect */
+      width: 22vw;
+      /* Set the desired width */
+      max-width: 400px;
+      height: 14vw;
+      /* Set the desired height */
+    }
+
+    #project-img {
+      width: 26vw;
+      /* Make the image fill the container */
+      max-width: 500px;
+      min-height: 14vw;
+      height: auto;
+      /* Maintain the aspect ratio */
+      >>>>>>>e588260cd1b1d2242b45ca145ccbef85ed673341
+    }
+
+    .flexbox {
+      display: flex;
+      flex-direction: row;
+
+      h3 {
+        font-weight: 400;
+        font-size: 16px;
+      }
+    }
+
+    #avi-container {
+      min-width: 40px;
+      max-width: 40px;
+      max-height: 40px;
+      min-height: 40px;
+      border-radius: 50px;
+      margin-right: 1em;
+      align-self: center;
+    }
+
+    #avi {
+      width: 42px;
+    }
+
+
+    p {
+      opacity: 0%;
+    }
+
+    h2 {
+      text-decoration: none;
+    }
+
+    .details {
+      display: flex;
+    }
   }
 
-  .flexbox {
+  .projectsRow:hover {
+    border: 1px solid transparent;
+    /* Almost non-existent border */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    /* Shadow effect */
+    border-radius: 5%;
+    cursor: pointer;
+
+    p {
+      opacity: 100%;
+    }
+
+    h2 {
+      text-decoration: underline;
+    }
+  }
+
+
+  #placeholder {
+    margin-top: 30vh;
+    margin-bottom: 30vh;
+  }
+
+  .signIn {
+    margin-top: 24vh;
+    margin-bottom: 16vh;
+  }
+
+  .signUp {
+    margin-top: 8h;
+    margin-bottom: 13vh;
+  }
+
+
+  #signUp,
+  #signIn {
+    align-content: center;
+  }
+
+
+
+  #signupForm,
+  #signinForm {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
+    align-items: left;
+
+    label {
+      font-size: 20px;
+      margin-bottom: 1.2em;
+      width: 60vw;
+      text-align: right;
+    }
+
+    input {
+      padding: 2px;
+      font-size: 16px;
+      background-color: rgb(245, 245, 245);
+      color: rgb(12, 12, 12);
+    }
+
+    p {
+      color: red;
+    }
+
+    button {
+      margin-top: 1em;
+      width: 18vw;
+      align-self: center;
+    }
   }
 
-  #avi-container {
-    min-width: 42px;
-    min-width: 42px;
-    max-height: 45px;
-    min-height: 45px;
-    border-radius: 50px;
-    margin-right: 1em;
-    align-self: center;
-  }
-
-  #avi {
-    width: 45px;
-  }
 
 
-  p {
-    opacity: 0%;
-  }
-
-  h2 {
-    text-decoration: none;
-  }
-
-  .details {
-    display: flex;
-  }
-}
-
-.projectsRow:hover {
-  border: 1px solid transparent;
-  /* Almost non-existent border */
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  /* Shadow effect */
-  border-radius: 5%;
-  cursor: pointer;
-
-  p {
-    opacity: 100%;
-  }
-
-  h2 {
-    text-decoration: underline;
-  }
-}
-
-
-#placeholder {
-  margin-top: 30vh;
-  margin-bottom: 30vh;
-}
-
-.signIn {
-  margin-top: 24vh;
-  margin-bottom: 16vh;
-}
-
-.signUp {
-  margin-top: 8h;
-  margin-bottom: 13vh;
-}
-
-
-#signUp,
-#signIn {
-  align-content: center;
-}
-
-
-
-#signupForm,
-#signinForm {
-  display: flex;
-  flex-direction: column;
-  text-align: right;
-
-  label {
-    font-size: 20px;
-    margin-bottom: 1.2em;
-    width: 60vw;
-  }
-
-  input {
-    padding: 2px;
-    font-size: 16px;
-    background-color: rgb(245, 245, 245);
-    color: rgb(12, 12, 12);
-  }
-
-  p {
-    color: red;
-  }
 
   button {
-    margin-top: 1em;
-    width: 18vw;
-    align-self: center;
-  }
-}
-
-
-
-
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #282828;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-
-button:hover {
-  border-color: #eeeeee;
-  background-color: #3e3e3e;
-}
-
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
-}
-
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
+    border-radius: 8px;
+    border: 1px solid transparent;
+    padding: 0.6em 1.2em;
+    font-size: 1em;
+    font-weight: 500;
+    font-family: inherit;
+    background-color: #282828;
+    cursor: pointer;
+    transition: border-color 0.25s;
   }
 
-  a:hover {
-    color: #747bff;
+  button:hover {
+    border-color: #eeeeee;
+    background-color: #3e3e3e;
   }
 
-  button {
-    background-color: #f9f9f9;
+  button:focus,
+  button:focus-visible {
+    outline: 4px auto -webkit-focus-ring-color;
   }
-}
 
-/*Reward Index In Project Page*/
-#reward-Cards {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  font-family: fantasy;
-}
+  @media (prefers-color-scheme: light) {
+    :root {
+      color: #213547;
+      background-color: #ffffff;
+    }
 
-#reward-Cards p {
-  color: #131528;
-  font-weight: 700;
-  letter-spacing: 2px;
-  text-align: left;
+    a:hover {
+      color: #747bff;
+    }
 
-}
+    button {
+      background-color: #f9f9f9;
+    }
+  }
 
-#reward-Cards img {
-  display: flex;
-  justify-content: flex-start;
-}
+  /*Reward Index In Project Page*/
+  #reward-Cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    font-family: fantasy;
+  }
+
+  #reward-Cards p {
+    color: #131528;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-align: left;
+
+  }
+
+  #reward-Cards img {
+    display: flex;
+    justify-content: flex-start;
+  }

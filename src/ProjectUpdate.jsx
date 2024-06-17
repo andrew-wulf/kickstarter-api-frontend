@@ -13,7 +13,7 @@ export function ProjectUpdate (props) {
   };
 
   return (
-    <div>
+    <div className="project-update">
       <h1>Project Details</h1>
       <form onSubmit={handleUpdateProject}>
         <label>
