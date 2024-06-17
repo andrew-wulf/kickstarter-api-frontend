@@ -33,6 +33,10 @@ input {
   margin-left: 1em;
 }
 
+label {
+  text-align: center;
+}
+
 #description {
   background-color: rgba(241, 241, 241, 0.95);
     color: rgb(12, 12, 12);

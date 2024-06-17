@@ -41,7 +41,7 @@ export function ProjectsShow(props) {
     
     return (
       <div>
-        <button onClick={handleShowProject}>Edit</button>
+        <button id="edit" onClick={handleShowProject}>Edit</button>
         <Modal show={isProjectsShowVisible} onClose={handleClose}>
           <div>
             <ProjectUpdate project={props.project} />

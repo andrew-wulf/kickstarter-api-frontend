@@ -1,10 +1,9 @@
-
-
 .grid-container {
   margin-bottom: 2vw;
 }
 
-.contributions, .rewards {
+.contributions,
+.rewards {
   text-align: left;
   padding: 2em;
 }
@@ -22,6 +21,22 @@ h2 {
   text-align: left;
   padding: 2em;
 }
+
+.user-projects {
+  h2 {
+    font-size: 20px;
+  }
+
+  h2:hover {
+    color: rgb(39, 91, 187);
+    cursor: pointer;
+  }
+
+  p {
+    font-size: 15px;
+  }
+}
+
 .user-header {
   font-size: 14px;
   width: 100vw;
@@ -31,27 +46,36 @@ h2 {
   margin-bottom: 4vw;
 
   img {
-    margin-left: 25vw;
-    margin-right: 5vw;
-    max-width: 10vw;
+    max-width: 8vw;
+    min-width: 8vw;
   }
 
+  .img-container {
+    width: 8vw;
+    margin-left: 25vw;
+    margin-right: 5vw;
+    border-radius: 200px;
+  }
 }
 
-img {max-width: 15vw;}
+<<<<<<< HEAD img {
+  max-width: 15vw;
+}
 
-
-.user-page {
+=======>>>>>>>e588260cd1b1d2242b45ca145ccbef85ed673341 .user-page {
   margin-left: 2vw;
 }
 
 .user-donations-index {
   margin-top: 10vh;
   text-align: bottom;
+
   h1 {
     font-size: 30px;
   }
-  h1, p{
+
+  h1,
+  p {
     text-align: left;
   }
 
@@ -66,7 +90,7 @@ img {max-width: 15vw;}
   }
 
   h3:hover {
-    color:rgb(76, 122, 174);
+    color: rgb(76, 122, 174);
     cursor: pointer;
   }
 
@@ -81,4 +105,10 @@ img {max-width: 15vw;}
   grid-template-columns: 15% 25% 25% 10%;
   column-gap: 8%;
   border-bottom: 2px solid rgba(31, 31, 31, 0.451);
+}
+
+
+#reward-Cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
 }
