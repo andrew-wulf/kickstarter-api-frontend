@@ -191,19 +191,22 @@ img {
   
   .progress-bar-fill {
     height: 100%;
-    background-color: #81f674c8;
+    background-color: #69ef5ac7;
     transition: width 0.5s ease-in-out;
     border-radius: 25px 0 0 25px;
   }
 
   #img-container {
     box-shadow: 0 2px 4px rgba(138, 138, 138, 0.1); /* Optional: add a shadow for better effect */
-    width: 20vw; /* Set the desired width */
-    height: 24vh; /* Set the desired height */
+    width: 22vw; /* Set the desired width */
+    max-width: 400px;
+    height: 14vw; /* Set the desired height */
   }
 
-  img {
-    max-width: 22vw; /* Make the image fill the container */
+  #project-img {
+    width: 26vw; /* Make the image fill the container */
+    max-width: 500px;
+    min-height: 14vw;
     height: auto; /* Maintain the aspect ratio */
   }
   
@@ -284,11 +287,12 @@ img {
 #signupForm, #signinForm{
   display: flex;
   flex-direction: column;
-  text-align: right;
+  align-items: left;
   label {
     font-size: 20px;
     margin-bottom: 1.2em;
     width: 60vw;
+    text-align: right;
   }
   input {
     padding: 2px;
