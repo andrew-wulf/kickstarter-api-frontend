@@ -140,9 +140,7 @@ img {
 
 }
 
-<<<<<<< HEAD .content {}
-
-=======>>>>>>>e588260cd1b1d2242b45ca145ccbef85ed673341 .footer {
+.footer {
   background-color: rgb(20, 20, 20);
   color: rgb(224, 219, 219);
   height: 10vh;
@@ -156,14 +154,11 @@ img {
 .projectsIndex {
   padding: 2em 4em;
   display: grid;
-  <<<<<<< HEAD grid-template-columns: 40% 40%;
-  column-gap: 15%;
-
-  =======grid-template-columns: 30% 30%;
+  grid-template-columns: 30% 30%;
   margin-left: 10vw;
   column-gap: 20%;
 
-  >>>>>>>e588260cd1b1d2242b45ca145ccbef85ed673341 h2 {
+  h2 {
     font-size: 22px;
     font-weight: 600;
     line-height: 1.4em;
@@ -183,28 +178,11 @@ img {
   flex-direction: column;
   align-items: center;
 
-  <<<<<<< HEAD #img-container {
-    box-shadow: 0 2px 4px rgba(138, 138, 138, 0.1);
-    /* Optional: add a shadow for better effect */
-    width: 20vw;
-    /* Set the desired width */
-    height: 24vh;
-    /* Set the desired height */
-  }
-
-  img {
-    width: 600px;
-    /* Make the image fill the container */
-    height: auto;
-    /* Maintain the aspect ratio */
-    =======padding: 0.8em;
-    max-width: 400px;
+  padding: 0.8em;
+  max-width: 400px;
 
 
-    h1,
-    h2,
-    h3,
-    p {
+    h1, h2, h3, p {
       margin: 0.3em;
     }
 
@@ -247,7 +225,6 @@ img {
       min-height: 14vw;
       height: auto;
       /* Maintain the aspect ratio */
-      >>>>>>>e588260cd1b1d2242b45ca145ccbef85ed673341
     }
 
     .flexbox {
