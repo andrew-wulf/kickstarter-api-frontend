@@ -1,10 +1,9 @@
-
-
 .grid-container {
   margin-bottom: 2vw;
 }
 
-.contributions, .rewards {
+.contributions,
+.rewards {
   text-align: left;
   padding: 2em;
 }
@@ -22,6 +21,7 @@ h2 {
   text-align: left;
   padding: 2em;
 }
+
 .user-header {
   font-size: 14px;
   width: 100vw;
@@ -38,7 +38,9 @@ h2 {
 
 }
 
-img {max-width: 15vw;}
+img {
+  max-width: 15vw;
+}
 
 
 .user-page {
@@ -48,10 +50,13 @@ img {max-width: 15vw;}
 .user-donations-index {
   margin-top: 10vh;
   text-align: bottom;
+
   h1 {
     font-size: 30px;
   }
-  h1, p{
+
+  h1,
+  p {
     text-align: left;
   }
 
@@ -66,7 +71,7 @@ img {max-width: 15vw;}
   }
 
   h3:hover {
-    color:rgb(76, 122, 174);
+    color: rgb(76, 122, 174);
     cursor: pointer;
   }
 
@@ -81,4 +86,10 @@ img {max-width: 15vw;}
   grid-template-columns: 15% 25% 25% 10%;
   column-gap: 8%;
   border-bottom: 2px solid rgba(31, 31, 31, 0.451);
+}
+
+
+#reward-Cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
 }

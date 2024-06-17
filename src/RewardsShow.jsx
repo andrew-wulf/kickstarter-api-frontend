@@ -26,16 +26,24 @@ export function RewardsShow (props) {
     });
   }, [props.project]);
 
-
-  return (
-    <div className="rewardsByProject">
-      {currentRewards.map(reward => (
-        <div>
-          <p>Description: {reward.description} </p>
-          <p>Reward amount: {reward.amount} </p>
-          <p>Delivery Date: {formatDate(reward.delivery_date)} </p>
+  if (currentRewards.length > 0) {
+    return (
+      <div className="rewards-by-project-id">
+        <h1>Your Issued Rewards</h1>
+        <div id="reward-Cards">
+          {currentRewards.map(reward => (
+            <div key={reward.id}>
+              <p>Description: {reward.description} </p>
+              <p>Reward amount: {reward.amount} </p>
+              <p>Delivery Date: {formatDate(reward.delivery_date)} </p>
+            </div>
+          ))};
         </div>
-      ))};
-    </div>
-  );
+      </div>
+    );
+  } else {
+    return (
+      <h1>Backer Rewards undetermined. Return later for update!</h1>
+    );
+  }
 }
