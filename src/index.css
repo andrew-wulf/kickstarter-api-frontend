@@ -140,9 +140,7 @@ img {
 
 }
 
- <<<<<<< HEAD .content {}
-
-=======>>>>>>>e588260cd1b1d2242b45ca145ccbef85ed673341 .footer {
+ .footer {
   background-color: rgb(20, 20, 20);
   color: rgb(224, 219, 219);
   height: 10vh;
@@ -159,11 +157,7 @@ img {
   grid-template-columns: 40% 40%;
   column-gap: 15%;
 
-grid-template-columns: 30% 30%;
-  margin-left: 10vw;
-  column-gap: 20%;
-
-  >>>>>>>e588260cd1b1d2242b45ca145ccbef85ed673341 h2 {
+  h2 {
     font-size: 22px;
     font-weight: 600;
     line-height: 1.4em;
@@ -175,7 +169,6 @@ grid-template-columns: 30% 30%;
     font-size: 16px;
     font-weight: 300;
   }
-
 }
 
 .projectsRow {
@@ -183,7 +176,7 @@ grid-template-columns: 30% 30%;
   flex-direction: column;
   align-items: center;
 
- #img-container {
+  #img-container {
     box-shadow: 0 2px 4px rgba(138, 138, 138, 0.1);
     /* Optional: add a shadow for better effect */
     width: 20vw;
@@ -244,7 +237,6 @@ grid-template-columns: 30% 30%;
       min-height: 14vw;
       height: auto;
       /* Maintain the aspect ratio */
-      >>>>>>>e588260cd1b1d2242b45ca145ccbef85ed673341
     }
 
     .flexbox {
@@ -284,6 +276,7 @@ grid-template-columns: 30% 30%;
       display: flex;
     }
   }
+}
 
   .projectsRow:hover {
     border: 1px solid transparent;
