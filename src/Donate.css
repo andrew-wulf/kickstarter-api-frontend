@@ -41,7 +41,7 @@
 
   .grid-container {
     display: grid;
-    grid-template-columns: 10% 25% 27% 30%;
+    grid-template-columns: 10% 25% 27% 40%;
     column-gap: 1%;
   }
 
