@@ -96,22 +96,7 @@
   }
 }
 
-.rewards {
-  box-shadow: 0 6px 6px rgba(0, 0, 0, 0.1);
-  border: 1px solid rgba(26, 26, 26, 0.927);
-  border-radius: 40px;
-  width: 25vw;
-  max-width: 350px;
-  justify-self: center;
-  
-  h1, h3, p {
-    text-align: center;
-  }
 
-  h1 {
-    margin-bottom: 2em;
-  }
-}
 
 .progress-bar-container {
   width: 80%;
@@ -163,3 +148,82 @@
   font-weight: 400;
   text-wrap: nowrap;
 }
+
+
+
+.rewards {
+  margin-top: 5em;
+  box-shadow: 0 6px 6px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(26, 26, 26, 0.927);
+  border-radius: 40px;
+  width: 25vw;
+  max-width: 320px;
+  max-height: 560px;
+  justify-self: center;
+  overflow-y: scroll;
+  
+ 
+  h1, h3, p {
+    text-align: center;
+  }
+  
+  h1 {
+    margin-bottom: 1em;
+  }
+}
+
+
+.rewards::-webkit-scrollbar {
+  width: 5px; /* Width of the scrollbar */
+  height: 40px;
+}
+.rewards::-webkit-scrollbar-track {
+  background: transparent; /* Background of the scrollbar track */
+}
+
+.rewards::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0); /* Color of the scrollbar thumb */
+  border-radius: 10px; /* Rounded corners of the scrollbar thumb */
+}
+
+
+/*Reward Index In Project Page*/
+.reward-cards {
+  display: flex;
+  flex-direction: column;
+  font-family: fantasy;
+
+  p {
+    color: #131528;
+    font-weight: 700;
+    letter-spacing: 2px;
+  }
+  
+  .img-container {
+    max-width: 300px;
+    max-height: 200px;
+    width: 20vw;
+    height: 12vw;
+    margin-left: min(25%, 1em)
+  }
+
+  img {
+    display: flex;
+    justify-content: center;
+    max-width: 350px;
+    width: 22vw;
+  }
+  #card {
+    padding-bottom: 1.5em;
+    margin-bottom: 1.5em;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.305);
+  }
+  #card:hover {
+    cursor: pointer;
+    h3 {
+      text-decoration: underline;
+    }
+  }
+}
+
+

@@ -134,14 +134,11 @@ export function Donate(props) {
           
           <div className='spacer'/>
           
-          <div className='rewards'>
-            <h1>Rewards</h1>
-            <h3>Tier 1 - $20</h3>
-            <p>20 of 20 left</p>
-            <h3>Tier 2 - $40</h3>
-            <p>20 of 20 left</p>
-            <h3>Tier 3 - $60</h3>
-            <p>20 of 20 left</p>
+          <div> 
+            <div className='rewards'>
+              <h1>Your Issued Rewards</h1>
+              <RewardsShow project={project}/>
+            </div>
           </div>
 
         </div>
@@ -149,7 +146,7 @@ export function Donate(props) {
 
         <ProjectDonations project={project} />
       
-        <RewardsShow project={project}/>
+        
        
       </div>
     )
