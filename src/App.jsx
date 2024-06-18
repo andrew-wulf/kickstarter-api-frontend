@@ -9,6 +9,8 @@ import axios from 'axios';
 function App() {
 
   const [currentUser, setCurrentUser] = useState("");
+  const [searchVal, setSearchVal] = useState("");
+  const [searchHeight, setSearchHeight] = useState('0%');
 
   const getUser = () => {
     if (localStorage.jwt) {
@@ -34,10 +36,10 @@ function App() {
   return (
     <>
       <BrowserRouter>
-        <Header user={currentUser} getUser={getUser}/>
+        <Header user={currentUser} getUser={getUser} searchval={searchVal} setSearchVal={setSearchVal} setSearchHeight={setSearchHeight}/>
         <br/>
         <br/>
-        <Content user={currentUser} getUser={getUser}/>
+        <Content user={currentUser} getUser={getUser} searchVal={searchVal} searchHeight={searchHeight} setSearchHeight={setSearchHeight}/>
         <br/>
         <br/>
         <Footer />

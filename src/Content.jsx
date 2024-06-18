@@ -7,6 +7,7 @@ import {SignUp} from './SignUp';
 import {Donate} from './Donate'
 import { UserPage } from './UserPage';
 import { ProjectsNew } from './ProjectsNew';
+import { Search } from './Search';
 
 
 export function Content(props) {
@@ -14,7 +15,6 @@ export function Content(props) {
   
   const [projects, setProjects] = useState({});
   const [currentProject, setCurrentProject] = useState({});
-  const [currentProj, setCurrentProj] = useState({});
 
   
 
@@ -72,24 +72,31 @@ export function Content(props) {
 
   return (
     <div className="content">
-  
-      <Routes>
-        <Route path="/signin" element={
-          <SignIn login={login}/>}/>
-        
-        <Route path="/signup" element={<SignUp signup={signup}/>} />
-   
-        <Route path="" element={
-          <div className="home">
-            <ProjectsIndex data={projects} donate={handleDonate} />
-          </div>
-        }/>
+      
+      <div className='search-overlay' style={{'height': props.searchHeight}}>
+        <Search val={props.searchVal} projects={projects}/>
+      </div>
 
-        <Route path="/projects/:id" element={<Donate project={currentProj} setProject={setCurrentProj} user={props.user}/>} />
-        <Route path="/user" element={<UserPage user={props.user} getUser={props.getUser}/>} />
-        <Route path="/new-project" element={<ProjectsNew user={props.user} createProject={handleProjectCreate}/>} />
+      <div onClick={() => {props.setSearchHeight('0%')}}>
+        <Routes>
+          <Route path="/signin" element={
+            <SignIn login={login}/>}/>
+          
+          <Route path="/signup" element={<SignUp signup={signup}/>} />
+    
+          <Route path="" element={
+            <div className="home">
+              <ProjectsIndex data={projects} donate={handleDonate} />
+            </div>
+          }/>
 
-      </Routes>
+          <Route path="/projects/:id" element={<Donate project={currentProject} setProject={setCurrentProject} user={props.user}/>} />
+          <Route path="/user" element={<UserPage user={props.user} getUser={props.getUser}/>} />
+          <Route path="/new-project" element={<ProjectsNew user={props.user} createProject={handleProjectCreate}/>} />
+
+        </Routes>
+      </div>
+
     </div>
   );
 }
