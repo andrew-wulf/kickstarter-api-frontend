@@ -4,13 +4,23 @@ import axios from 'axios';
 
 export function Header(props) {
 
+  
+
   const signOut = () => {
     delete axios.defaults.headers.common["Authorization"];
     localStorage.removeItem("jwt");
     window.location.href = window.location.href;
   }
 
-  
+  const handleChange = (e) => {
+    props.setSearchVal(e.target.value);
+    if (e.target.value.length > 0) {
+      props.setSearchHeight('40%')
+    }
+    else {
+      props.setSearchHeight('0%')
+    }
+  }
 
   if (props.user) {
     let msg = `Welcome, ${props.user.first}!`;
@@ -27,7 +37,7 @@ export function Header(props) {
     return (
       <div className="header">
         <h1 onClick={() => {window.location.href = "/"}}>Kickstarter</h1>
-        <input id="searchBar" type="search" placeholder="Search projects, creators and categories"/>
+        <input id="searchBar" type="search" placeholder="Search projects, creators and categories" value={props.searchVal} onChange={handleChange}/>
 
         <div className="flexbox">
           <div className="img-container"> <img src={img_link} /> </div>
@@ -44,7 +54,7 @@ export function Header(props) {
     return (
     <div className="header">
       <h1 onClick={() => {window.location.href = "/"}}>Kickstarter</h1>
-      <input id="searchBar" type="search" placeholder="Search projects, creators and categories"></input>
+      <input id="searchBar" type="search" placeholder="Search projects, creators and categories" value={props.searchVal} onChange={handleChange}></input>
       <h3 className="signInLink" onClick={() => {window.location.href = "/signin"}}>Sign In</h3>
       <h3 onClick={() => {window.location.href = "/signup"}}>Sign Up</h3>
     </div>
